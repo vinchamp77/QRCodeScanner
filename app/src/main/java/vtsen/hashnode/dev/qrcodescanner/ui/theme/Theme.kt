@@ -29,7 +29,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun NewEmptyComposeAppTheme(
+fun QRCodeScannerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     useSystemUIController: Boolean = true,
     content: @Composable () -> Unit

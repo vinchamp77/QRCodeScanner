@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import vtsen.hashnode.dev.qrcodescanner.R
-import vtsen.hashnode.dev.qrcodescanner.ui.theme.NewEmptyComposeAppTheme
+import vtsen.hashnode.dev.qrcodescanner.ui.theme.QRCodeScannerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(useSystemUIController: Boolean = true) {
-    NewEmptyComposeAppTheme(useSystemUIController = useSystemUIController) {
+    QRCodeScannerTheme(useSystemUIController = useSystemUIController) {
         Text(text = stringResource(id = R.string.hello_android))
     }
 }
