@@ -3,11 +3,9 @@ package vtsen.hashnode.dev.qrcodescanner.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import vtsen.hashnode.dev.qrcodescanner.R
+import vtsen.hashnode.dev.qrcodescanner.ui.screens.QRCodeScannerScreen
 import vtsen.hashnode.dev.qrcodescanner.ui.theme.QRCodeScannerTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +20,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(useSystemUIController: Boolean = true) {
     QRCodeScannerTheme(useSystemUIController = useSystemUIController) {
-        Text(text = stringResource(id = R.string.hello_android))
+        QRCodeScannerScreen()
     }
 }
 
