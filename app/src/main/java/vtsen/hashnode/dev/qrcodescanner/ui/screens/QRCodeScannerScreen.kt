@@ -33,6 +33,7 @@ fun QRCodeScannerScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        CameraPreview()
         Text(text=statusText)
 
     }
