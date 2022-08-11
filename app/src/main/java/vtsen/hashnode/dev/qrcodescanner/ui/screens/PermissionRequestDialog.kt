@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import kotlinx.coroutines.delay
 
 @Composable
-fun RequestPermissionDialog(
+fun PermissionRequestDialog(
     permission: String,
     onResult: (Boolean) -> Unit,
 ) {
