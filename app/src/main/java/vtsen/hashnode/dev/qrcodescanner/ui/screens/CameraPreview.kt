@@ -7,15 +7,15 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalLifecycleOwner
-
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import vtsen.hashnode.dev.qrcodescanner.QRCodeAnalyzer
 
 @Composable
-fun CameraPreview() {
+fun CameraPreview(urlCallback: (String) -> Unit) {
 
     val lifeCycleOwner = LocalLifecycleOwner.current
+    //val context = LocalContext.current
 
     AndroidView(
         factory = { context ->
@@ -29,7 +29,9 @@ fun CameraPreview() {
 
             imageAnalysis.setAnalyzer(
                 ContextCompat.getMainExecutor(context),
-                QRCodeAnalyzer()
+                QRCodeAnalyzer { url ->
+                    urlCallback(url)
+                }
             )
 
             ProcessCameraProvider.getInstance(context).get().bindToLifecycle(
@@ -43,3 +45,4 @@ fun CameraPreview() {
         }
     )
 }
+

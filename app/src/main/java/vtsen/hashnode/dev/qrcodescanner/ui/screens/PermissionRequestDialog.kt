@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.*
+import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import kotlinx.coroutines.delay
 
@@ -13,6 +14,13 @@ fun PermissionRequestDialog(
     permission: String,
     onResult: (Boolean) -> Unit,
 ) {
+    val context = LocalContext.current
+
+    if(isPermissionGranted(context, permission)) {
+        onResult(true)
+        return
+    }
+
     var launchEffectKey by remember {
         mutableStateOf(false)
     }
