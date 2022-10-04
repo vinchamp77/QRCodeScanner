@@ -15,7 +15,6 @@ import vtsen.hashnode.dev.qrcodescanner.QRCodeAnalyzer
 fun CameraPreview(urlCallback: (String) -> Unit) {
 
     val lifeCycleOwner = LocalLifecycleOwner.current
-    //val context = LocalContext.current
 
     AndroidView(
         factory = { context ->
