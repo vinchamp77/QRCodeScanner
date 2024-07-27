@@ -5,7 +5,7 @@ This is a very simple QR code scanner / reader that decodes the URL link and all
 ![](screenshots/Screenshot_03_small.png)
 
 ## Requirements
-Android Studio Chipmunk or later
+Android Studio Koala or later
 
 ## Tech Stack
 - Jetpack Compose
